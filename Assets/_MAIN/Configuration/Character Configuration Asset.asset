@@ -15,7 +15,7 @@ MonoBehaviour:
   characters:
   - name: Karin
     alias: "\u041A\u0430\u0440\u0438\u043D"
-    characterType: 1
+    characterType: 2
     nameColor: {r: 0.45854452, g: 0.8584906, b: 0.39279994, a: 1}
     dialogueColor: {r: 0.2784937, g: 0.5849056, b: 0.25658596, a: 1}
     nameFont: {fileID: 11400000, guid: 72d68798eca17354db4eeb6d95d4a306, type: 2}
