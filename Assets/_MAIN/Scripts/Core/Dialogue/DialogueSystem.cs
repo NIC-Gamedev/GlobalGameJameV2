@@ -84,6 +84,8 @@ namespace DIALOGUE
             dialogueContainer.SetDialogueFontSize(fontSize);
             dialogueContainer.nameContainer.SetNameColor(config.nameColor);
             dialogueContainer.nameContainer.SetNameFont(config.nameFont);
+            architect.characterVoice = config.characterVoice;
+            architect.speedMultiplier = config.speakSpeed;
             fontSize = this.config.defaultNameFontSize * config.nameFontScale;
             dialogueContainer.nameContainer.SetNameFontSize(fontSize);
         }

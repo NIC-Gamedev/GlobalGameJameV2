@@ -72,14 +72,46 @@ namespace AYellowpaper.SerializedCollections.Editor
 
         public static bool HasDrawerForType(Type type)
         {
-            Type attributeUtilityType = typeof(SerializedProperty).Assembly.GetType("UnityEditor.ScriptAttributeUtility");
-            if (attributeUtilityType == null)
+            try
+            {
+                // Достаём внутренний класс
+                Type attributeUtilityType = typeof(SerializedProperty).Assembly.GetType("UnityEditor.ScriptAttributeUtility");
+                if (attributeUtilityType == null)
+                    return false;
+
+                // Ищем метод GetDrawerTypeForType
+                var getDrawerMethod = attributeUtilityType.GetMethod(
+                    "GetDrawerTypeForType",
+                    BindingFlags.Static | BindingFlags.NonPublic
+                );
+
+                if (getDrawerMethod == null)
+                    return false;
+
+                // Проверяем, сколько параметров метод реально принимает
+                var parameters = getDrawerMethod.GetParameters();
+                object result;
+
+                if (parameters.Length == 1)
+                {
+                    // Старые Unity (до 2021)
+                    result = getDrawerMethod.Invoke(null, new object[] { type });
+                }
+                else
+                {
+                    // Новые Unity (2022+)
+                    result = getDrawerMethod.Invoke(null, new object[] { type, false });
+                }
+
+                return result != null;
+            }
+            catch (Exception e)
+            {
+                Debug.LogWarning($"[SerializedCollections] Failed to check drawer for {type}: {e.Message}");
                 return false;
-            var getDrawerMethod = attributeUtilityType.GetMethod("GetDrawerTypeForType", BindingFlags.Static | BindingFlags.NonPublic);
-            if (getDrawerMethod == null)
-                return false;
-            return getDrawerMethod.Invoke(null, new object[] { type }) != null;
+            }
         }
+
 
         internal static void AddGenericMenuItem(GenericMenu genericMenu, bool isOn, bool isEnabled, GUIContent content, GenericMenu.MenuFunction action)
         {
@@ -105,7 +137,7 @@ namespace AYellowpaper.SerializedCollections.Editor
                 var methodInfo = classType.GetMethod("GetFieldInfoFromProperty", BindingFlags.Static | BindingFlags.NonPublic);
                 var parameters = new object[] { property, null };
                 methodInfo.Invoke(null, parameters);
-                type = (Type) parameters[1];
+                type = (Type)parameters[1];
                 return true;
             }
             catch
@@ -114,24 +146,24 @@ namespace AYellowpaper.SerializedCollections.Editor
                 return false;
             }
         }
-        
+
         internal static float DoHorizontalScale(Rect rect, float value)
         {
             var controlId = GUIUtility.GetControlID(FocusType.Passive);
             var isMovingMouse = Event.current.type == EventType.MouseDrag;
             DoButtonControl(rect, controlId, false, false, GUIContent.none, GUIStyle.none);
-            
+
             if (controlId == GUIUtility.hotControl && isMovingMouse)
             {
                 value += Event.current.delta.x;
                 GUI.changed = true;
             }
-            
+
             EditorGUIUtility.AddCursorRect(rect, MouseCursor.ResizeHorizontal);
 
             return value;
         }
-        
+
         internal static bool DoButtonControl(Rect rect, int id, bool on, bool hover, GUIContent content, GUIStyle style)
         {
             Event current = Event.current;
@@ -233,7 +265,7 @@ namespace AYellowpaper.SerializedCollections.Editor
                 return type.BaseType.GetFieldRecursive(name, bindingFlags);
             return fieldInfo;
         }
-        
+
         private static PropertyInfo GetPropertyRecursive(this Type type, string name, BindingFlags bindingFlags)
         {
             var propertyInfo = type.GetProperty(name, bindingFlags);

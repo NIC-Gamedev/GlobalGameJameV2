@@ -15,14 +15,16 @@ public class TextArchitect
 
     public string fullTargetText => preText + targetText;
 
-    public enum BuildMethod{instant,typewriter,fade}
+    public AudioClip characterVoice;
+
+    public enum BuildMethod { instant, typewriter, fade }
     public BuildMethod buildMethod = BuildMethod.typewriter;
 
     public Color textColor { get { return tmpro.color; } set { tmpro.color = value; } }
 
-    public float speed { get { return baseSpeed * speedMultiplier;}  set { speedMultiplier = value; } }
+    public float speed { get { return baseSpeed * speedMultiplier; } set { speedMultiplier = value; } }
     private const float baseSpeed = 1;
-    private float speedMultiplier = 1;
+    public float speedMultiplier = 1;
 
     public int charactersPerCycle { get { return speed <= 2f ? characterMultiplier : speed <= 2.5f ? characterMultiplier * 2 : characterMultiplier * 3; } }
     private int characterMultiplier = 1;
@@ -32,10 +34,15 @@ public class TextArchitect
     public TextArchitect(TextMeshProUGUI tmproUI)
     {
         this.tmproUI = tmproUI;
-    }    
+    }
     public TextArchitect(TextMeshPro tmproWorld)
     {
         this.tmproWorld = tmproWorld;
+    }
+
+    public void SetTmpro(TextMeshProUGUI tmp)
+    {
+        tmproUI = tmp;
     }
 
     public Coroutine Build(string text)
@@ -69,7 +76,7 @@ public class TextArchitect
             return;
         tmpro.StopCoroutine(buildProcess);
         buildProcess = null;
-        
+
     }
 
     IEnumerator Building()
@@ -202,7 +209,8 @@ public class TextArchitect
         while (tmpro.maxVisibleCharacters < tmpro.textInfo.characterCount)
         {
             tmpro.maxVisibleCharacters += hurryUp ? charactersPerCycle * 5 : charactersPerCycle;
-
+            if (characterVoice)
+                AudioManager.instance.PlaySoundEffect(characterVoice);
             yield return new WaitForSeconds(0.015f / speed);
         }
     }
@@ -236,7 +244,7 @@ public class TextArchitect
 
                 for (int v = 0; v < 4; v++)
                 {
-                    vertexColors[charInfo.vertexIndex + v].a = (byte) alphas[i];
+                    vertexColors[charInfo.vertexIndex + v].a = (byte)alphas[i];
                 }
 
                 if (alphas[i] >= 255)

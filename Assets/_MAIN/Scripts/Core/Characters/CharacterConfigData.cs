@@ -22,6 +22,9 @@ namespace CHARACTERS
 
         public float nameFontScale = 1f;
         public float dialogueFontScale = 1f;
+        public float speakSpeed = 0.6f;
+
+        public AudioClip characterVoice;
 
         [SerializedDictionary("Path / ID", "Sprite")]
         public SerializedDictionary<string, Sprite> sprites = new SerializedDictionary<string, Sprite>();
@@ -41,6 +44,8 @@ namespace CHARACTERS
 
             result.nameFontScale = nameFontScale;
             result.dialogueFontScale = dialogueFontScale;
+
+            result.characterVoice = characterVoice;
 
             return result;
         }
@@ -65,6 +70,8 @@ namespace CHARACTERS
 
                 result.nameFontScale = 1f;
                 result.dialogueFontScale =1f;
+
+                result.characterVoice = null;
 
                 return result;
             }

@@ -31,7 +31,6 @@ RectTransform:
   - {fileID: 1289572224454226796}
   - {fileID: 3325435170554754200}
   m_Father: {fileID: 3085286927201750043}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -68,7 +67,6 @@ RectTransform:
   m_Children:
   - {fileID: 5358143896864219234}
   m_Father: {fileID: 6061183935810849994}
-  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -107,7 +105,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3325435170554754200}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -176,7 +173,7 @@ GameObject:
   - component: {fileID: 765990213306594701}
   - component: {fileID: 6459540899827291923}
   m_Layer: 5
-  m_Name: Character - [Raelin]
+  m_Name: 'Character - [Raelin]'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -196,7 +193,6 @@ RectTransform:
   m_Children:
   - {fileID: 3085286927201750043}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.35281822, y: 0}
   m_AnchorMax: {x: 0.67127275, y: 0.88838387}
@@ -255,7 +251,6 @@ RectTransform:
   m_Children:
   - {fileID: 6061183935810849994}
   m_Father: {fileID: 5033214477810347632}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -272,7 +267,7 @@ CanvasRenderer:
   m_CullTransparentMesh: 1
 --- !u!95 &7877497811325224334
 Animator:
-  serializedVersion: 5
+  serializedVersion: 7
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -286,10 +281,12 @@ Animator:
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &6944108893006405019
 GameObject:
   m_ObjectHideFlags: 0
@@ -320,7 +317,6 @@ RectTransform:
   m_Children:
   - {fileID: 7947472226299356478}
   m_Father: {fileID: 6061183935810849994}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -359,7 +355,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1289572224454226796}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
