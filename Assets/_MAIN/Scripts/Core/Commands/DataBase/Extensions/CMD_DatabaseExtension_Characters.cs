@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using CHARACTERS;
 using System.Linq;
+using System.Security.Cryptography;
 
 namespace COMMANDS
 {
@@ -13,6 +14,7 @@ namespace COMMANDS
         private static string[] PARAM_IMMEDIATE => new string[] { "-i", "-immediate" };
         private static string[] PARAM_SPEED => new string[] { "-spd", "-speed" };
         private static string[] PARAM_SMOOTH => new string[] { "-sm", "-smooth" };
+        private static string[] PARAM_ANIMNAME => new string[] { "-n", "-name" };
         private static string PARAM_XPOS => "-x";
         private static string PARAM_YPOS => "-y";
 
@@ -37,6 +39,7 @@ namespace COMMANDS
             baseCommands.AddCommand("highlight", new Func<string[], IEnumerator>(Highlight));
             baseCommands.AddCommand("unhighlight", new Func<string[], IEnumerator>(UnHighlight));
             baseCommands.AddCommand("faceright", new Action<string[]>(FaceRight));
+            baseCommands.AddCommand("animate", new Action<string[]>(Animate));
 
             //Добавляем персонажам специфичные базыданных
             CommandDatabase spriteCommands = CommandManager.instance.CreateSubDatabase(CommandManager.DATABASE_CHARACTERS_SPRITE);
@@ -62,6 +65,17 @@ namespace COMMANDS
                 character.isVisible = true; 
             else
                 character.Show();
+        }
+
+        private static void Animate(string[] data)
+        {
+            string characterName = data[0];
+            Character character = CharacterManager.instance.GetCharacter(characterName);
+            string name = "";
+            var parameters = ConvertDataToParameters(data);
+            parameters.TryGetValue(PARAM_ANIMNAME, out name);
+
+            character.Animate(name);
         }
 
         private static void Sort(string[] data)
@@ -240,7 +254,7 @@ namespace COMMANDS
             Debug.Log(data.ToString());
             parameters.TryGetValue(PARAM_XPOS, out x, defaultValue: 0);
             parameters.TryGetValue(PARAM_YPOS, out y, defaultValue: 0);
-            Debug.Log(x +""+y);
+            Debug.Log(x +" "+y);
             character.SetPosition(new Vector2(x, y));
         }
 

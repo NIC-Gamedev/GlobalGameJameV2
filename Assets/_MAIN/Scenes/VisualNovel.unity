@@ -6885,11 +6885,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4522422818156180054, guid: f617867b942915a4682a6bc887e49cb7, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 97.5
+      value: 93.1
       objectReference: {fileID: 0}
     - target: {fileID: 4522422818156180054, guid: f617867b942915a4682a6bc887e49cb7, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -157.9
+      value: -158.3
       objectReference: {fileID: 0}
     - target: {fileID: 4522422818156180054, guid: f617867b942915a4682a6bc887e49cb7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -8329,6 +8329,50 @@ MonoBehaviour:
   m_PointerBehavior: 0
   m_CursorLockBehavior: 0
   m_ScrollDeltaPerTick: 6
+--- !u!1 &1456865060
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1456865061}
+  - component: {fileID: 1456865062}
+  m_Layer: 0
+  m_Name: BreakerManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1456865061
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1456865060}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1904230268}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1456865062
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1456865060}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea094fb59a0330b42b194ab4313dc810, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1465622329
 GameObject:
   m_ObjectHideFlags: 0
@@ -9285,11 +9329,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4522422818156180054, guid: f617867b942915a4682a6bc887e49cb7, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -82.7
+      value: -87.099976
       objectReference: {fileID: 0}
     - target: {fileID: 4522422818156180054, guid: f617867b942915a4682a6bc887e49cb7, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -157.9
+      value: -158.30002
       objectReference: {fileID: 0}
     - target: {fileID: 4522422818156180054, guid: f617867b942915a4682a6bc887e49cb7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -10362,6 +10406,7 @@ Transform:
   - {fileID: 1026544499}
   - {fileID: 853414489}
   - {fileID: 1299509638}
+  - {fileID: 1456865061}
   m_Father: {fileID: 445443285}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1921819399
@@ -11057,6 +11102,31 @@ PrefabInstance:
     - target: {fileID: 1839883160511127375, guid: f617867b942915a4682a6bc887e49cb7, type: 3}
       propertyPath: m_Name
       value: BreackPoints
+      objectReference: {fileID: 0}
+    - target: {fileID: 3131220843297282244, guid: f617867b942915a4682a6bc887e49cb7, type: 3}
+      propertyPath: tooltipText
+      value: "\u041F\u0443\u0448\u043A\u0430\n\u0421\u0435\u0439\u0447\u0430\u0441
+        \u0432 \u043D\u043E\u0440\u043C\u0430\u043B\u044C\u043D\u043E\u043C \u0441\u043E\u0441\u0442\u043E\u044F\u043D\u0438\u0439
+        \u0440\u0430\u0431\u043E\u0442\u0430\u0435\u0442"
+      objectReference: {fileID: 0}
+    - target: {fileID: 3131220843297282244, guid: f617867b942915a4682a6bc887e49cb7, type: 3}
+      propertyPath: tooltipTextIsWork
+      value: "\u041E\u0440\u0431\u0438\u0442\u0430\u043B\u044C\u043D\u0430\u044F
+        \u041F\u0443\u0448\u043A\u0430 \u0440\u0430\u0431\u043E\u0442\u0430\u0435\u0442
+        \u043A\u043E\u0440\u0440\u0435\u043A\u0442\u043D\u043E\n\u043C\u043E\u0434\u0443\u043B\u044C
+        \u0434\u043B\u044F \u0445\u0440\u0430\u043D\u0435\u043D\u0438\u044F \u0438
+        \u0443\u043F\u0440\u0430\u0432\u043B\u0435\u043D\u0438\u044F \u043E\u0440\u0443\u0436\u0438\u0435\u043C
+        \u0441 \u0443\u0441\u0438\u043B\u0435\u043D\u043D\u043E\u0439 \u0437\u0430\u0449\u0438\u0442\u043E\u0439
+        \u0438 \u0430\u0432\u0442\u043E\u043D\u043E\u043C\u043D\u044B\u043C\u0438
+        \u0441\u0438\u0441\u0442\u0435\u043C\u0430\u043C\u0438."
+      objectReference: {fileID: 0}
+    - target: {fileID: 3131220843297282244, guid: f617867b942915a4682a6bc887e49cb7, type: 3}
+      propertyPath: tooltipTextIsNotWork
+      value: "\u041E\u0440\u0431\u0438\u0442\u0430\u043B\u044C\u043D\u0430\u044F
+        \u043F\u0443\u0448\u043A\u0430 \u043D\u0435 \u0440\u0430\u0431\u043E\u0442\u0430\u0435\u0442\n\u0441\u043B\u043E\u043C\u0430\u043D
+        \u0443\u043F\u0440\u0430\u0432\u043B\u044F\u044E\u0449\u0438\u0439 \u043C\u043E\u0434\u0443\u043B\u044C,
+        \u0437\u0430\u0449\u0438\u0442\u0438\u0442\u044C\u0441\u044F \u043D\u0435
+        \u043F\u043E\u043B\u0443\u0447\u0438\u0442\u0441\u044F."
       objectReference: {fileID: 0}
     - target: {fileID: 4522422818156180054, guid: f617867b942915a4682a6bc887e49cb7, type: 3}
       propertyPath: m_Pivot.x
