@@ -235,12 +235,12 @@ namespace COMMANDS
 
             if (character == null || data.Length < 2)
                 return;
-
+          
             var parameters = ConvertDataToParameters(data, 1);
-
+            Debug.Log(data.ToString());
             parameters.TryGetValue(PARAM_XPOS, out x, defaultValue: 0);
             parameters.TryGetValue(PARAM_YPOS, out y, defaultValue: 0);
-
+            Debug.Log(x +""+y);
             character.SetPosition(new Vector2(x, y));
         }
 
