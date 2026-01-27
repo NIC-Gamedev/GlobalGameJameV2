@@ -26,3 +26,94 @@ MonoBehaviour:
     characterVoice: {fileID: 0}
     sprites:
       _serializedList: []
+  - name: Kairn
+    alias: Kairn
+    characterType: 0
+    nameColor: {r: 1, g: 1, b: 1, a: 1}
+    dialogueColor: {r: 1, g: 1, b: 1, a: 1}
+    nameFont: {fileID: 11400000, guid: 72d68798eca17354db4eeb6d95d4a306, type: 2}
+    dialogueFont: {fileID: 11400000, guid: 72d68798eca17354db4eeb6d95d4a306, type: 2}
+    nameFontScale: 1
+    dialogueFontScale: 1
+    speakSpeed: 0.6
+    characterVoice: {fileID: 0}
+    sprites:
+      _serializedList: []
+  - name: Stella
+    alias: Stella
+    characterType: 0
+    nameColor: {r: 1, g: 1, b: 1, a: 1}
+    dialogueColor: {r: 1, g: 1, b: 1, a: 1}
+    nameFont: {fileID: 11400000, guid: 72d68798eca17354db4eeb6d95d4a306, type: 2}
+    dialogueFont: {fileID: 11400000, guid: 72d68798eca17354db4eeb6d95d4a306, type: 2}
+    nameFontScale: 1
+    dialogueFontScale: 1
+    speakSpeed: 0.6
+    characterVoice: {fileID: 0}
+    sprites:
+      _serializedList: []
+  - name: Eckless
+    alias: Eckless
+    characterType: 0
+    nameColor: {r: 1, g: 1, b: 1, a: 1}
+    dialogueColor: {r: 1, g: 1, b: 1, a: 1}
+    nameFont: {fileID: 11400000, guid: 72d68798eca17354db4eeb6d95d4a306, type: 2}
+    dialogueFont: {fileID: 11400000, guid: 72d68798eca17354db4eeb6d95d4a306, type: 2}
+    nameFontScale: 1
+    dialogueFontScale: 1
+    speakSpeed: 0.6
+    characterVoice: {fileID: 0}
+    sprites:
+      _serializedList: []
+  - name: Varg
+    alias: Varg
+    characterType: 0
+    nameColor: {r: 1, g: 1, b: 1, a: 1}
+    dialogueColor: {r: 1, g: 1, b: 1, a: 1}
+    nameFont: {fileID: 11400000, guid: 72d68798eca17354db4eeb6d95d4a306, type: 2}
+    dialogueFont: {fileID: 11400000, guid: 72d68798eca17354db4eeb6d95d4a306, type: 2}
+    nameFontScale: 1
+    dialogueFontScale: 1
+    speakSpeed: 0.6
+    characterVoice: {fileID: 0}
+    sprites:
+      _serializedList: []
+  - name: Clementine
+    alias: Clementine
+    characterType: 0
+    nameColor: {r: 1, g: 1, b: 1, a: 1}
+    dialogueColor: {r: 1, g: 1, b: 1, a: 1}
+    nameFont: {fileID: 11400000, guid: 72d68798eca17354db4eeb6d95d4a306, type: 2}
+    dialogueFont: {fileID: 11400000, guid: 72d68798eca17354db4eeb6d95d4a306, type: 2}
+    nameFontScale: 1
+    dialogueFontScale: 1
+    speakSpeed: 0.6
+    characterVoice: {fileID: 0}
+    sprites:
+      _serializedList: []
+  - name: Luven
+    alias: Luven
+    characterType: 0
+    nameColor: {r: 1, g: 1, b: 1, a: 1}
+    dialogueColor: {r: 1, g: 1, b: 1, a: 1}
+    nameFont: {fileID: 11400000, guid: 72d68798eca17354db4eeb6d95d4a306, type: 2}
+    dialogueFont: {fileID: 11400000, guid: 72d68798eca17354db4eeb6d95d4a306, type: 2}
+    nameFontScale: 1
+    dialogueFontScale: 1
+    speakSpeed: 0.6
+    characterVoice: {fileID: 0}
+    sprites:
+      _serializedList: []
+  - name: Captain
+    alias: Captain
+    characterType: 0
+    nameColor: {r: 1, g: 1, b: 1, a: 1}
+    dialogueColor: {r: 1, g: 1, b: 1, a: 1}
+    nameFont: {fileID: 11400000, guid: 72d68798eca17354db4eeb6d95d4a306, type: 2}
+    dialogueFont: {fileID: 11400000, guid: 72d68798eca17354db4eeb6d95d4a306, type: 2}
+    nameFontScale: 1
+    dialogueFontScale: 1
+    speakSpeed: 0.6
+    characterVoice: {fileID: 0}
+    sprites:
+      _serializedList: []
