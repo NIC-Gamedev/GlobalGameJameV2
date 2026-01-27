@@ -26,7 +26,7 @@ public class SlorOne : Slot, IPointerEnterHandler, IPointerExitHandler
 
     public override void OnDrop(PointerEventData eventData)
     {
-        if (transform.childCount > 0)
+        if (transform.childCount > 0 || isWorking)
             return;
         base.OnDrop(eventData);
     }

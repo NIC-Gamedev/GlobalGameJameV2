@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Globalization;
 
 namespace COMMANDS
 {
@@ -15,7 +16,12 @@ namespace COMMANDS
         {
             for (int i = startingIndex; i < parameterArray.Length; i++)
             {
-                if (parameterArray[i].StartsWith(PARAMETER_IDENTIFIER) && !float.TryParse(parameterArray[i], out _))
+                if (parameterArray[i].StartsWith(PARAMETER_IDENTIFIER) && !float.TryParse(
+                        parameterArray[i],
+                        NumberStyles.Float,
+                        CultureInfo.InvariantCulture,
+                        out _
+                    ))
                 {
                     string pName = parameterArray[i];
                     string pValue = "";
@@ -80,7 +86,12 @@ namespace COMMANDS
             }
             else if (typeof(T) == typeof(float))
             {
-                if (float.TryParse(parameterValue, out float floatValue))
+                if (float.TryParse(
+                        parameterValue,
+                        NumberStyles.Float,
+                        CultureInfo.InvariantCulture,
+                        out float floatValue
+                    ))
                 {
                     value = (T)(object)floatValue;
                     return true;

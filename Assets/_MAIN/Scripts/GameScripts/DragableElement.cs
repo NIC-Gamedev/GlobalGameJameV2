@@ -1,9 +1,8 @@
 using DG.Tweening;
-using Unity.VisualScripting;
-using UnityEditor;
+using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using UnityEngine.UIElements;
+using UnityEngine.UI;
 
 public class DragableElement : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHandler
 {
@@ -14,6 +13,8 @@ public class DragableElement : MonoBehaviour, IBeginDragHandler, IEndDragHandler
     private Vector2 sizeBef;
     public Vector2 sizeAfter;
     public Vector2 moveOffset;
+    public Image img;
+    public TextMeshProUGUI text;
 
     public CanvasGroup canvasGroup,mainGroup;
 
@@ -24,6 +25,9 @@ public class DragableElement : MonoBehaviour, IBeginDragHandler, IEndDragHandler
     {
         rectTransform = GetComponent<RectTransform>();
         sizeBef = rectTransform.sizeDelta;
+    }
+    private void Start()
+    {
         canvas = rectTransform.GetComponentInParent<Canvas>();
     }
     public void OnBeginDrag(PointerEventData eventData)
