@@ -1,12 +1,12 @@
 SetLayerMedia(background captain_quarters_day)
 PlayAmbience(ShipHum_Unstable)
 
-CreateCharacter(Clementine), Clementine.SetPosition(0.25 0.22)
-CreateCharacter(Luven), Luven.SetPosition(0.4 0.18)
-CreateCharacter(Varg), Varg.SetPosition(0.9 0.18)
-CreateCharacter(Kairn), Kairn.SetPosition(0.9 0.1)
-CreateCharacter(Stella), Stella.SetPosition(0.1 0.2)
-CreateCharacter(Eckless), Eckless.SetPosition(0.7 0.15)
+CreateCharacter(Clementine), Clementine.SetPosition(0.25 0.22), Clementine.faceleft(-i true)
+CreateCharacter(Luven), Luven.SetPosition(0.4 0.18), Luven.faceleft(-i true)
+CreateCharacter(Varg), Varg.SetPosition(0.9 0.18), Varg.faceleft(-i true)
+CreateCharacter(Kairn), Kairn.SetPosition(0.9 0.1), Kairn.faceleft(-i true)
+CreateCharacter(Stella), Stella.SetPosition(0.1 0.2), Stella.faceleft(-i true)
+CreateCharacter(Eckless), Eckless.SetPosition(0.7 0.15), Eckless.faceleft(-i true)
 
 Narrator "(Утро начинается не с яркого солнца, а с назойливого зуммера внутренней связи. Я с трудом разлепляю веки.)"
 "(Воздух в каюте стал заметно холоднее и суше, а в горле поселился неприятный привкус жженого пластика. Это запах «умирающего» корабля.)"
@@ -24,7 +24,7 @@ Varg.Hide()
 
 Narrator "(В помещении атмосфера накалена до предела. Эклесс мечется перед стеллажами, Кайрн ковыряет щит, Стелла жмется к терминалу.)"
 
-Eckless.Show(), Eckless.faceright()
+Eckless.Show(), Eckless.faceright(-i true)
 Eckless "Это никакая не халатность, Кайрн! Это воровство! Прямо у нас под носом!"
 Eckless "Я вчера лично опечатала этот сектор, а сегодня здесь нет и половины. Ящики не испарились, они все разбиты и разбросаны! Там словно ураган прошелся!"
 
@@ -46,7 +46,7 @@ Clementine "Хватит плодить монстров в своих голо�
 Clementine "Но следы на металле, которые я видела... Человеческие пальцы на такое не способны. Если только человек не впал в полную ярость."
 Luven.Hide()
 
-Varg.Show(), Varg.faceright()
+Varg.Show(), Varg.faceright(-i true)
 Varg "Ресурсы потеряны. Саботаж налицо. Нам нужно обыскать каюты. Каждый закуток."
 Clementine "О-о-о, Варг, неужели и до твоих игрушек успели дотянуться?"
 Varg "Не смешно. Нам заплатили огромную сумму за этот груз. Мы ДОЛЖНЫ проследить, чтобы он дошел в сохранности. Иначе все будет зря!"
@@ -117,6 +117,7 @@ Varg.Show(), Varg.SetPosition(0.2 0.18)
 Captain "(Я замер. Варг стоит спиной. Его выправка исчезла. Плечи подергиваются. Дыхание... хриплый, влажный звук, от которого волосы встают дыбом.)"
 Eckless "Эй, Варг! Опять молишься на свой ящик? Глянь-ка сюда, я нашла..."
 
+Varg.faceleft(-i true)
 Narrator "(Варг резко оборачивается. Эклесс осекается и делает шаг назад.)"
 Varg "Капитан... Эклесс... Я... я говорил вам утром. Смотрите."
 Narrator "(Он указывает на переборку. Толстые листы металла вмяты внутрь кувалдой. На полу — лужи черной слизи.)"
