@@ -29,6 +29,12 @@ namespace COMMANDS
             dataBase.AddCommand("load", new Action<string[]>(LoadNewDialogueFile));
 
             dataBase.AddCommand("spawn", new Action<string[]>(Spawn));
+            dataBase.AddCommand("nextday", new Action(NextDay));
+        }
+
+        public static void NextDay()
+        {
+            GameManager.Instance.NextDay();
         }
 
         public static void Spawn(string[] data)

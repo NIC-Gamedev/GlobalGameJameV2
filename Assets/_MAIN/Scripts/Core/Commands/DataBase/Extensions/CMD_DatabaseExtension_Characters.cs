@@ -39,6 +39,8 @@ namespace COMMANDS
             baseCommands.AddCommand("highlight", new Func<string[], IEnumerator>(Highlight));
             baseCommands.AddCommand("unhighlight", new Func<string[], IEnumerator>(UnHighlight));
             baseCommands.AddCommand("faceright", new Action<string[]>(FaceRight));
+            baseCommands.AddCommand("faceleft", new Action<string[]>(FaceLeft));
+            baseCommands.AddCommand("flip", new Action<string[]>(Flip));
             baseCommands.AddCommand("animate", new Action<string[]>(Animate));
 
             //Добавляем персонажам специфичные базыданных
@@ -269,6 +271,31 @@ namespace COMMANDS
 
 
             character.FaceRight();
+        }
+        public static void Flip(string[] data)
+        {
+            Character character = CharacterManager.instance.GetCharacter(data[0]);
+
+            if (character == null || data.Length < 2)
+                return;
+
+            var parameters = ConvertDataToParameters(data, 1);
+
+
+            character.Flip();
+        }
+
+        public static void FaceLeft(string[] data)
+        {
+            Character character = CharacterManager.instance.GetCharacter(data[0]);
+
+            if (character == null || data.Length < 2)
+                return;
+
+            var parameters = ConvertDataToParameters(data, 1);
+
+
+            character.FaceLeft();
         }
 
         public static void SetPriority(string[] data)
