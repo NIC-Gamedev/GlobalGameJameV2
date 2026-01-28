@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: d2757066aca5c8f45b1129bc1b643d62
+guid: 6da5dead343c85549a195b6a71bc0a05
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3918876344715076037
-    second: tenor-export27_0
+      213: -5224450111193561246
+    second: output-onlinetools_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: tenor-export27_0
+      name: output-onlinetools_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 498
-        height: 305
+        width: 640
+        height: 360
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b3e93924aba5d99c0800000000000000
-      internalID: -3918876344715076037
+      spriteID: 267ce8fdd460f77b0800000000000000
+      internalID: -5224450111193561246
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      tenor-export27_0: -3918876344715076037
+      output-onlinetools_0: -5224450111193561246
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

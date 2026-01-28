@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      tenor-export20_0: 9204793169014482871
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
