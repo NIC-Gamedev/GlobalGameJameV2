@@ -1,5 +1,5 @@
 SetLayerMedia(background bridge_view)
-PlayAmbience(DeepSpaceHum)
+playambience(Tranquil)
 
 CreateCharacter(Clementine)
 Clementine.SetPosition(0.3 0.22)
@@ -33,19 +33,20 @@ Narrator "(Очередной астероид. Раньше такой ужас
 "(Ладно, как в первый раз: снизить мощность основных двигателей, включить форсирующие двигатели и уйти в сторону.)"
 
 PlaySFX(SystemFailure)
+stopambience()
+playambience(Panic)
+
 AI "ТРЕВОГА: ОТКАЗ ФОРСИРУЮЩИХ ДВИГАТЕЛЕЙ"
 Captain "Черт, что за... Отказ?! В самый нужный момент?!"
 Narrator "(Кайрн, я тебе шкуру вздерну и месяц без премий будешь. Говорил же — все в порядке. Они не могли просто так сдохнуть.)"
 
 Captain "ЭКИПАЖ, ВНИМАНИЕ! ДЕРЖИТЕСЬ КРЕПЧЕ И ГОТОВЬТЕСЬ К УДАРУ!"
 
-StopAmbience()
 PlaySFX(ShipCrashExplosion)
 ClearLayerMedia(background)
 wait(2)
 
 SetLayerMedia(background bridge_destroyed)
-PlayAmbience(GasLeaking)
 
 Narrator "(Голова... словно в неё забили раскалённый болт. Перед глазами плывёт, но я всё ещё в кресле. Только... оно завалено обломками потолочной панели.)"
 "(Надо проверить... системы...)"
@@ -83,8 +84,9 @@ wait(2)
 ClearLayerMedia(background)
 wait(2)
 SetLayerMedia(background medical_bay)
-PlayAmbience(MedicalMonitorBeep)
 
+stopambience()
+playambience(Fine)
 Narrator "(Я в каюте. Живой. Но чувство... будто я проснулся не в своей постели, а в гробу. На лице — все та же маска. Тяжёлая, пахнет машинным маслом Кайрна. Тело ломит, но голова ясная. Слишком ясная.)"
 
 CreateCharacter(Clementine)
@@ -211,7 +213,7 @@ Clementine.Show()
 Clementine "Как хочешь... Только не заставляй чинить обшивку."
 
 Captain "Что ж, начнём."
-
+stopambience()
 Clementine.Hide()
 Stella.Hide()
 Varg.Hide()
@@ -219,11 +221,14 @@ Eckless.Hide()
 Kairn.Hide()
 
 ShowTerminal(true)
+playambience(Managing)
 PauseConversation()
 
 
 SetLayerMedia(background engineering_bay)
-PlayAmbience(LowVoltageHum)
+stopambience()
+playambience(Tranquil)
+
 
 Narrator "(Все разошлись по каютам, но я не усну. Тот след у вентиляции... я должен убедиться, что мне это не причудилось из-за гипоксии. Я возвращаюсь туда, где всё началось.)"
 
@@ -235,6 +240,8 @@ Captain "Что-то мне крайне неспокойно. Это явно �
 
 
 SetLayerMedia(background bridge_night)
+stopambience()
+playambience(MainTheme)
 Stella.Show()
 Narrator "(Стоило открыться двери как я сразу устремился в рубку. Помещение погружено в полумрак. Стелла сидит в кресле навигатора, её силуэт едва освещен. Она так увлечена планшетом, что не замечает моего присутствия.)"
 
