@@ -91,7 +91,7 @@ CreateCharacter(Clementine)
 
 Clementine "Живой. Зрачки реагируют, дыхание ровное, хотя я была готова к тому, что там в вас уже нет жизни."
 Clementine "Если вы слышите мой голос и не видите перед собой тоннель со светом — поздравляю, капитан, вы всё ещё в нашей компании неудачников."
-SetLayerMedia(cinematic cinema_beginning -i true)
+SetLayerMedia(cinematic cinema_beginning)
 
 Narrator "(Голос Клементины... Как всегда: сухой и обжигающий. Я пытаюсь пошевелиться, но она мягко, но стальной хваткой прижимает моё плечо к койке.)"
 
@@ -218,6 +218,9 @@ Varg.Hide()
 Eckless.Hide()
 Kairn.Hide()
 
+ShowTerminal(true)
+PauseConversation()
+
 
 SetLayerMedia(background engineering_bay)
 PlayAmbience(LowVoltageHum)
@@ -252,9 +255,9 @@ choice "Как отреагировать?"
                 Captain "Давай просто посидим. Без формальностей. Смотри — вон там, кажется, туманность Ориона. Красиво, если забыть, что она в паре световых лет отсюда."
                 Stella "(Склоняет голову на мое плечо) Спасибо, Капитан. Мне... мне это было нужно. Просто посидеть с кем-то, кто не требует от меня немедленного спасения."
                 
-                SetLayerMedia(cinematic cinema_stella -i true)
+                SetLayerMedia(cinematic cinema_stella)
                 hidedb()
-                wait(5)
+                "()"
                 ClearLayerMedia(cinematic)
                 showdb()
 
