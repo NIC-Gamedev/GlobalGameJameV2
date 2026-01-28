@@ -101,7 +101,7 @@ MonoBehaviour:
     nameFontScale: 1
     dialogueFontScale: 1
     speakSpeed: 0.6
-    characterVoice: {fileID: 8300000, guid: 9ad7b13d5edeb634cb27158ba3411526, type: 3}
+    characterVoice: {fileID: 8300000, guid: 83ae74e262df7004082e8f5020aea786, type: 3}
     sprites:
       _serializedList: []
   - name: Narrator
@@ -114,6 +114,6 @@ MonoBehaviour:
     nameFontScale: 1
     dialogueFontScale: 1
     speakSpeed: 0.6
-    characterVoice: {fileID: 8300000, guid: 7ba92d8cc7d5e764e9eae0479f1af0f9, type: 3}
+    characterVoice: {fileID: 8300000, guid: 83ae74e262df7004082e8f5020aea786, type: 3}
     sprites:
       _serializedList: []
