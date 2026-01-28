@@ -302,3 +302,8 @@ Narrator "(Спальная капсула.)"
 StopAmbience()
 ClearLayerMedia(background)
 wait(2)
+
+NextDay()
+PauseConversation()
+
+Load(Day2)
