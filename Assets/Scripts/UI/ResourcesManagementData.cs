@@ -44,8 +44,8 @@ public class ResourcesManagementData : MonoBehaviour
             Mathf.Min(managementResources.food, 30) : 0;
 
         EnergyLoss("Engine");
-
-        if(bm.breackAbleSlot["Engine"].isWorking) 
+        managementResources.oxygen = 100;
+        if (bm.breackAbleSlot["Engine"].isWorking) 
             managementResources.energy = Mathf.Min(managementResources.energy + managementResources.energyDiffPerDay,100);
         managementResources.food -= managementResources.foodDiffPerPerson;
     }

@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      cinema_eckless_0: -8851817557867109213
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
