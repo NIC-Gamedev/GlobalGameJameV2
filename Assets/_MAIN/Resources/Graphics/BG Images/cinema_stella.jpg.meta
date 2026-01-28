@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      cinema_stella_0: 1457783209279110383
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

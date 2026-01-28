@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: d1632514ea65d82459e6c02b7af5cca8
+guid: cf99a79215b315445beaecffaa4d8359
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5009796695780402884
-    second: AyuGram_6XkPPh9rRz_0
+      213: -1917899448610637909
+    second: photo_5460898677913227762_x_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: AyuGram_6XkPPh9rRz_0
+      name: photo_5460898677913227762_x_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 138
-        height: 126
+        width: 640
+        height: 360
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c39551fb270a97ab0800000000000000
-      internalID: -5009796695780402884
+      spriteID: ba735aaec904265e0800000000000000
+      internalID: -1917899448610637909
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      AyuGram_6XkPPh9rRz_0: -5009796695780402884
+      photo_5460898677913227762_x_0: -1917899448610637909
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
