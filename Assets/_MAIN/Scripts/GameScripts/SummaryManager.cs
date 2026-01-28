@@ -49,7 +49,7 @@ public class SummaryManager : MonoBehaviour
             summary +=
                 $"{item.Item4.name} отправился(лась) работать в {item.Item1} и результатом стал " +
                 (item.Item2 ? "успех" : "провал") +
-                $" с шансом {item.Item3 * 10}% \n";
+                $" с шансом {item.Item4.characteristic.technique * 10}% \n";
             summary += "\n";
         }
         if(bk.repaired.Count == 0)

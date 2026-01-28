@@ -2,7 +2,7 @@ using Sirenix.OdinInspector;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
-[DefaultExecutionOrder(-100)]
+[DefaultExecutionOrder(1000)]
 public class BreakerManager : SerializedMonoBehaviour
 {
     public static BreakerManager Instance;
