@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      unconsciousness_0: -1407178181321451804
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
