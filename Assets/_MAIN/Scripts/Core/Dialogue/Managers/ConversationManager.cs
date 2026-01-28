@@ -101,6 +101,8 @@ namespace DIALOGUE
                         yield return Line_RunCommands(line);
                     }
 
+                    yield return PauseConversation();
+
                     if (line.hasDialogue)
                     {
                         yield return WaitForUserInput();
@@ -111,6 +113,15 @@ namespace DIALOGUE
             }
 
             process = null;
+        }
+        public bool isPausedConversation;
+
+        public IEnumerator PauseConversation()
+        {
+            while (isPausedConversation)
+            {
+                yield return null;
+            }
         }
 
         private void TryAdvanceConversation(Conversation conversation)

@@ -1,3 +1,4 @@
+using Sirenix.OdinInspector;
 using System;
 using UnityEngine;
 
@@ -7,6 +8,10 @@ public class GameManager : MonoBehaviour
     public Action<int> OnDayChange;
 
     public static GameManager Instance;
+
+    public RectTransform terminal;
+
+    public Canvas GameCanvas;
 
     private void Awake()
     {
@@ -23,12 +28,15 @@ public class GameManager : MonoBehaviour
         VariableStore.CreateVariable("currDay", currDay, () => currDay, value => 
         { 
             currDay = value;
-            OnDayChange?.Invoke(currDay);
         });
     }
 
+    [Button]
     public void NextDay()
     {
         currDay++;
+        OnDayChange?.Invoke(currDay);
+
+        VariableStore.TrySetValue("currDay", currDay);
     }
 }

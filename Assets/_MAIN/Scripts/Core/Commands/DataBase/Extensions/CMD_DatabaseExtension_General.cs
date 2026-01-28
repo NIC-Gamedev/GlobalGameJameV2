@@ -16,14 +16,54 @@ namespace COMMANDS
         new public static void Extend(CommandDatabase dataBase)
         {
             dataBase.AddCommand("wait", new Func<string, IEnumerator>(Wait));
+            dataBase.AddCommand("pause", new Func<string, IEnumerator>(Wait));
 
             dataBase.AddCommand("showui", new Func<string[], IEnumerator>(ShowDialogueSystem));
+            dataBase.AddCommand("showterminal", new Action<string[]>(ShowTerminal));
+            dataBase.AddCommand("pauseconversation", new Action<string[]>(pauseConversation));
             dataBase.AddCommand("hideui", new Func<string[], IEnumerator>(HideDialogueSystem));
 
             dataBase.AddCommand("showdb", new Func<string[], IEnumerator>(ShowDialogueBox));
             dataBase.AddCommand("hidedb", new Func<string[], IEnumerator>(HideDialogueBox));
 
             dataBase.AddCommand("load", new Action<string[]>(LoadNewDialogueFile));
+
+            dataBase.AddCommand("spawn", new Action<string[]>(Spawn));
+        }
+
+        public static void Spawn(string[] data)
+        {
+            string fileName = string.Empty;
+            float x = 0, y = 0;
+            var parameters = ConvertDataToParameters(data);
+            parameters.TryGetValue(PARAM_FILEPATH, out fileName);
+            parameters.TryGetValue("-x", out x);
+            parameters.TryGetValue("-y", out y);
+            string filePath = FilePaths.GetPathToResources("Prefabs/", fileName);
+            GameObject prefab = Resources.Load<GameObject>(filePath);
+
+            // Создаем объект в канвасе
+            var inst = UnityEngine.Object.Instantiate(prefab, GameManager.Instance.GameCanvas.transform);
+
+            // Получаем RectTransform
+            RectTransform rectTransform = inst.GetComponent<RectTransform>();
+
+            // Устанавливаем позицию в локальных координатах канваса
+            rectTransform.anchoredPosition = new Vector2(x, y);
+
+            // Сбрасываем масштаб и поворот
+            rectTransform.localScale = Vector3.one;
+            rectTransform.localRotation = Quaternion.identity;
+        }
+
+        private static void ShowTerminal(string[] data)
+        {
+            GameManager.Instance.terminal.gameObject.SetActive(bool.Parse(data[0]));
+        }
+
+        private static void pauseConversation(string[] data)
+        {
+            DialogueSystem.instance.conversationManager.isPausedConversation = true;
         }
 
         private static void LoadNewDialogueFile(string[] data)

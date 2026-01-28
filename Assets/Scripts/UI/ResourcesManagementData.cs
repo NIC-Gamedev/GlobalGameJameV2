@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 [System.Serializable]
 public struct ManagementResources
@@ -13,12 +14,26 @@ public class ResourcesManagementData : MonoBehaviour
 {
     public static ResourcesManagementData Instance;
     public ManagementResources managementResources = new();
+
+    public Slider food, oxygen, energy;
     private void Awake()
     {
         if (Instance == null)
             Instance = this;
         else
             Destroy(gameObject);
+    }
+
+    private void Start()
+    {
+        GameManager.Instance.OnDayChange += OnNextDay;
+    }
+
+    private void Update()
+    {
+        food.value = managementResources.food;
+        oxygen.value = managementResources.oxygen;
+        energy.value = managementResources.energy;
     }
 
     public void OnNextDay(int currDay)
@@ -28,12 +43,10 @@ public class ResourcesManagementData : MonoBehaviour
         managementResources.food += bm.foodMaker.transform.childCount > 0 ?
             Mathf.Min(managementResources.food, 30) : 0;
 
-        foreach (var item in bm.breackAbleSlot.Keys)
-        {
-            EnergyLoss("Engine");
-        }
-        managementResources.oxygen -= managementResources.oxygenDiffPerPerson;
-        managementResources.energy -= managementResources.energyDiffPerDay;
+        EnergyLoss("Engine");
+
+        if(bm.breackAbleSlot["Engine"].isWorking) 
+            managementResources.energy = Mathf.Min(managementResources.energy + managementResources.energyDiffPerDay,100);
         managementResources.food -= managementResources.foodDiffPerPerson;
     }
 
@@ -48,6 +61,7 @@ public class ResourcesManagementData : MonoBehaviour
             }
         }
     }
+
 
     private void OnDestroy()
     {
